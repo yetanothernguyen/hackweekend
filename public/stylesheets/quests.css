@@ -20,6 +20,12 @@
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#646B79', endColorstr='#8D99AF');
 }
 
+.topbar-add {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+}
+
 .quest-list {
 	margin: 0;
 	padding: 0;
