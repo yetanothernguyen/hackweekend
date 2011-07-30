@@ -1,12 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="topbar">
+  <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
+  <span class="toplogo">Qwest</span>
+   <div class="clear"></div>
+</div>
 
+
+
+<div class="questentry">
+
+ <%= user_fb_picture(@quest_entry.user, 'square', :class=>' avatar fleft') %>
 <p>
-  <b>User:</b>
-  <%= @quest_entry.user.name %>
+  <%= @quest_entry.user.name %><br />
+  <%= @quest_entry.user.cp %> points
 </p>
+<br />
+<p class="qe_main">
 
-<p>
-  <b>Entry:</b>
   <%= @quest_entry.data[:submission] %>
 </p>
 
@@ -15,20 +24,22 @@
   <%= @quest_entry.venue %>
 </p>
 
-<p>
-  <b>Votes count:</b>
-  <%= @quest_entry.votes_count %>
-</p>
+
+ </div>
+ <div class="qe_vote">
+ <p>
+
+  <%= @quest_entry.votes_count %> Votes
+
 
 <% if logged_in? && !current_user.voted?(@quest_entry) %>
-    <p>
-      <%= link_to 'Vote up', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest_entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => 1), :method => :post %>
-      <%= link_to 'Vote down', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest_entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => -1), :method => :post %>
-    </p>
+
+      <%= link_to '+', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest_entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => 1), :class=>"vote voteup", :method => :post %>
+      <%= link_to '-', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest_entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => -1), :class=>"vote votedown", :method => :post %>
+
   <% end %>
-
-<%= link_to 'Back', @quest_entry.quest %>
-
+  </p>
+ </div>
 <article>
   <span id="status">loading...</span>
 </article>
