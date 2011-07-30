@@ -1,5 +1,5 @@
 <div class="topbar clearfix">
-  <%= link_to 'Back','#', :class => "topbar-btn topbar-back fleft" %>
+  <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
   <span class="toplogo">Qwest</span>
   <%= link_to '+', new_quest_path , :class => "topbar-btn topbar-add fright" %>
 </div>

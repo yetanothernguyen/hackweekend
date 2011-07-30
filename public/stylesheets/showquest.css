@@ -61,6 +61,7 @@ border-radius: 4px;
 	text-decoration:none;
 	padding:10px 10px;
 	display:block;
+	color:#000;
 }
 #questshow .entries li:last-child{
 	border:0;
