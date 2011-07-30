@@ -1,10 +1,5 @@
-<div id="splash">
-	<h1>Questio</h1>
-	<% if logged_in? %>
-		<%= user_fb_picture(current_user) %>
-		Hi <%= current_user.username %>!
-		<%= link_to 'Logout', signout_path %>
-	<% else %>
-		<%= link_to 'Login with Facebook', '/auth/facebook' %>
-	<% end %>
-</div>
+<% if logged_in? %>
+	<%= render 'landing' %>
+<% else %>
+	<%= render 'welcome' %>
+<% end %>
