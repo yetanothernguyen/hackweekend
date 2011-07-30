@@ -1,5 +1,10 @@
-<h1>New Entry</h1>
+<div class="topbar">
+  <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
+  <span class="toplogo">Qwest</span>
+   <div class="clear"></div>
+</div>
+
 
 <%= render 'form' %>
 
-<%= link_to 'Back', quest_entries_path %>
+

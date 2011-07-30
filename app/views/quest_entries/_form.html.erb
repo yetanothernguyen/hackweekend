@@ -1,3 +1,4 @@
+<div class="newqe">
 <%= form_for(@quest_entry) do |f| %>
   <% if @quest_entry.errors.any? %>
     <div id="error_explanation">
@@ -10,31 +11,32 @@
       </ul>
     </div>
   <% end %>
-
-  <p><%= @quest.title %></p>
+  <div class="padded">
+  <p class="qtitle"><%= @quest.title %></p>
 
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :quest_id %>
   <%= f.hidden_field :latitude %>
   <%= f.hidden_field :longitude %>
   <%= f.hidden_field :quest_id %>
-
-  <div class="field">
-    <%= f.label 'Entry: ', :submission %><br />
-    <%= text_area_tag 'quest_entry[submission]' %>
+</div>
+  <div class="field padded" style="border-top:1px solid #ccc">
+    <%= f.label :venue ,'Your submission ' %><br />
+    <%= text_area_tag 'quest_entry[venue]', '', :readonly => true, :class=>"nofield" %>
   </div>
 
-  <div class="field">
-    <%= f.label 'Venue: ', :venue %><br />
-    <%= text_field_tag 'quest_entry[venue]', '', :readonly => true %>
+  <div class="field  padded">
+    <%= f.label   :submission, 'Your message '   %><br />
+    <%= text_area_tag 'quest_entry[submission]'    %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="actions padded">
+    <%= f.submit "Add your entry", :class=>"btn orange" %>
   </div>
 <% end %>
+</div>
 
-<p>Your location:</p>
 <article>
   <span id="status">checking...</span>
 </article>
