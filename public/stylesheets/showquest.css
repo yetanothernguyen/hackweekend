@@ -20,22 +20,22 @@ padding:20px 10px 20px 60px;
 margin :4px 12px 0 -47px;
 }
 #questshow .questcard p.qtitle{
-	font-size:17px;
+	font-size:19px;
 	margin:0 0 5px;
 	font-weight:bold;
  }
 
-#questshow .questcard .votequest{
-	background:#fff;
-	padding:5px 10px;
-}
+
 
 #questshow .participate{
 	color:#fff;
 	padding:15px 20px;
+	background:#000;
 
 }
-#questshow .participate input#quest_participation_submit{
+#questshow .participate input#quest_participation_submit,
+#questshow .participate .btn.orange{
+
 	margin:0 auto;
 	width:150px;
 	display:block;
@@ -43,7 +43,7 @@ margin :4px 12px 0 -47px;
 }
 #questshow .entries{
 	width:95%;
-	margin:0 auto 30px;
+	margin:20px auto 30px;
 	background:#fff;
 border-radius: 4px;
 -moz-border-radius: 4px;
@@ -52,10 +52,15 @@ border-radius: 4px;
 #questshow .entries ul{
 	list-style:none;
 }
-#questshow .entries li{
-	padding:10px 10px;
-	overflow:hidden;
+#questshow .entries li  {
+ 	overflow:hidden;
 	border-bottom:1px solid #ddd;
+	background: url(http://qwest.dev/images/chevron.png) no-repeat 100% 50%;
+}
+#questshow .entries li a{
+	text-decoration:none;
+	padding:10px 10px;
+	display:block;
 }
 #questshow .entries li:last-child{
 	border:0;
@@ -73,28 +78,22 @@ border-radius: 4px;
 	font-size:15px;
 }
 #questshow .entries li .entry_info{
-	width:73%;
-	float:left;
+
+
 }
-#questshow .entries li .entry_vote{
-	float:right;
-	width:25px;
-}
-#questshow .entries li .entry_vote p a{
+
+
+
+#questshow   a.vote{
 	font-size:11px;
 	background:#eee;
-	padding:8px 4px;
+	padding:5px 4px;
 	width:20px;
+	float:left;
  	display:block;
-	margin-bottom:4px;
+	margin-right:4px;
 text-align:center;
 font-weight:bold;
 	text-decoration:none;
-
-}
-#questshow .entries li .entry_vote p a.voteup{
-	background:green;
-}
-#questshow .entries li .entry_vote p a.votedown{
-	background:red;
+	background:#fff;
 }

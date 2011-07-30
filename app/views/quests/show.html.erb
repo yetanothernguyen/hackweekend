@@ -13,70 +13,70 @@
 </p>
   <p><%= @quest.bounty %></p>
   <p class="qtitle"><%= @quest.title %> </p>
-  <span>in  <%= @quest.city.name %> </span>
-
-<p><%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left </p>
-</div>
-
-
-<div class="votequest">
-<p>
-  <b>Votes:</b>
-  <%= @quest.votes_count %>
-
+  <p>in  <%= @quest.city.name %>  &bull; <%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left &bull; <%= @quest.votes_count %> votes  </p>
+<br />
 <% if logged_in? && !current_user.voted?(@quest) %>
 
-  <%= link_to 'Vote up', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => 1), :method => :post %>
-  <%= link_to 'Vote down', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => -1), :method => :post %>
+ <p>
+  <%= link_to '+', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => 1),:class=>"vote voteup", :method => :post %>
+  <%= link_to '-', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => -1),:class=>"vote votedown", :method => :post %>
 </p>
 <% end %>
+<div class="clear"></div>
 </div>
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="participate">
-<% if logged_in? && !current_user.participated?(@quest) %>
-  <%= form_for @quest_participation do |f| %>
-    <%= f.hidden_field :quest_id %>
-    <%= f.hidden_field :user_id %>
-  	<%= f.submit 'Participate', :class=>"btn green" %>
-
-  <% end %>
+  <% if logged_in? && !current_user.participated?(@quest) %>
+      <%= form_for @quest_participation do |f| %>
+        <%= f.hidden_field :quest_id %>
+        <%= f.hidden_field :user_id %>
+        <%= f.submit 'Participate', :class=>"btn green" %>
+      <% end %>
   <% else %>
-   <p>You're participating in this quest</p>
-
-<% end %>
+       <% if !current_user.submitted?(@quest) %>
+        <%= link_to 'Submit entry', new_quest_entry_path(:quest_id => @quest.id), :class=>"btn orange" %>
+      <% end %>
+    <div class="clear"></div>
+  <% end %>
 </div>
 
-<% if logged_in? && !current_user.submitted?(@quest) %>
-  <%= link_to 'Submit entry', new_quest_entry_path(:quest_id => @quest.id) %>
-<% end %>
 
 
+
+  <div class="clear"></div>
 
 <div class="entries">
 <ul>
  <% @quest.quest_entries.each do |entry| %>
    <li>
+        <%= link_to(entry) do %>
+
+
    <%= user_fb_picture(entry.user, 'square', :class=>' avatar fleft') %>
   <div class="entry_info">
-     <span><%= entry.user.name %></span><br />
+     <span><%= entry.user.name %> &bull; <%= entry.votes_count %> votes</span><br />
     <p><%= entry.data[:submission] %></p>
-    <%= entry.votes_count %>
-    <%= link_to "View", entry %>
-  </div>
-    <% if logged_in? && !current_user.voted?(entry) %>
-    <div class="entry_vote">
-    <p>
-      <%= link_to "+", votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => 1), :class=>"voteup", :method => :post %></p>
-      <p><%= link_to "-", votes_path('vote[user_id]' => current_user.id , 'vote[votable_id]' => entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => -1), :class=>"votedown", :method => :post %>
-    </p>
-  </div>
-<% end %>
-</li>
-</ul>
- </div>
-<% end %>
 
+
+  </div>
+ <% end %>
+  </li>
+
+
+
+<% end %>
+</ul>
+</div>
 <article>
   <span id="status">loading...</span>
 </article>
