@@ -20,6 +20,6 @@ class Quest < ActiveRecord::Base
 	end
 
 	def reward
-		self.user.award_badge!("FirstQuestBadge")
+		self.user.award_badge!("first_quest")
 	end
 end
