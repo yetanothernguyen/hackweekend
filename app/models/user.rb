@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
 
-	has_many :authentications
+	has_many :authentications, :dependent => :delete_all do
+		def facebook
+			where(:provider => 'facebook').first
+		end
+	end
 
 	def self.create_from_omniauth(omniauth)
 		user = User.new

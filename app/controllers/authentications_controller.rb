@@ -10,4 +10,8 @@ class AuthenticationsController < ApplicationController
       sign_in_and_redirect(user)
     end
   end
+
+  def signout
+    sign_out_and_redirect
+  end
 end

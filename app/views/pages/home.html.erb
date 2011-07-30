@@ -1,4 +1,10 @@
 <div id="splash">
 	<h1>Questio</h1>
-	<%= link_to "Sign up via Facebook", "#", :id => "fb-connect" %>
+	<% if logged_in? %>
+		<%= user_fb_picture(current_user) %>
+		Hi <%= current_user.username %>!
+		<%= link_to 'Logout', signout_path %>
+	<% else %>
+		<%= link_to 'Login with Facebook', '/auth/facebook' %>
+	<% end %>
 </div>

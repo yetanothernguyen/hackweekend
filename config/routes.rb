@@ -1,6 +1,7 @@
 Hackweekend::Application.routes.draw do
   
   match '/auth/:provider/callback' => 'authentications#create'
+  match '/signout' => 'authentications#signout'
   resources :users
 
   root :to => "pages#home"
