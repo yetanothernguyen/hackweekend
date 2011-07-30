@@ -45,7 +45,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to(@vote.votable, :notice => 'Voted.') }
+        format.html { redirect_to(@vote.votable_type == 'Quest' ? @vote.votable_type : @vote.votable.quest, :notice => 'Voted.') }
         format.xml  { render :xml => @vote, :status => :created, :location => @vote }
       else
         format.html { render :action => "new" }

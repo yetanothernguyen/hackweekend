@@ -1,5 +1,7 @@
 Hackweekend::Application.routes.draw do
 
+  resources :quest_entries
+
   resources :votes
 
   resources :quest_participations

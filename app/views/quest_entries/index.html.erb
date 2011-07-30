@@ -1,0 +1,29 @@
+<h1>Listing quest_entries</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Quest</th>
+    <th>Votes count</th>
+    <th>Data</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quest_entries.each do |quest_entry| %>
+  <tr>
+    <td><%= quest_entry.user_id %></td>
+    <td><%= quest_entry.quest_id %></td>
+    <td><%= quest_entry.votes_count %></td>
+    <td><%= quest_entry.data %></td>
+    <td><%= link_to 'Show', quest_entry %></td>
+    <td><%= link_to 'Edit', edit_quest_entry_path(quest_entry) %></td>
+    <td><%= link_to 'Destroy', quest_entry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quest entry', new_quest_entry_path %>

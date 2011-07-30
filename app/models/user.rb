@@ -31,4 +31,7 @@ class User < ActiveRecord::Base
 		!self.votes.where(:votable_type => votable.class.to_s,
 										 :votable_id => votable.id).first.nil?
 	end
+
+	def submitted?(quest)
+	end
 end

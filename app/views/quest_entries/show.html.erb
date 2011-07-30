@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @quest_entry.user_id %>
+</p>
+
+<p>
+  <b>Quest:</b>
+  <%= @quest_entry.quest_id %>
+</p>
+
+<p>
+  <b>Votes count:</b>
+  <%= @quest_entry.votes_count %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @quest_entry.data %>
+</p>
+
+
+<%= link_to 'Edit', edit_quest_entry_path(@quest_entry) %> |
+<%= link_to 'Back', quest_entries_path %>
