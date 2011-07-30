@@ -1,19 +1,15 @@
-*{
-	margin:0;
-	padding:0;
-}
-body{
-	background:#66CCFF;
-	font-family:"Helvetica Neue","Helvetica","Lucida Grande";
-}
 html, body { height: 100%; }
-body { text-align: center; background: url('/images/qwest-bg.png') repeat-x; }
 
-
+body{
+	font-family:"Helvetica Neue","Helvetica","Lucida Grande";
+	text-align: center;
+	background: url('/images/qwest-bg.png') repeat-x #66CCFF;
+}
 
 .meta-text{
 	font-size:11px;
 }
+
 /*++++++++++++++
 /* Splash screen
 /*+++++++++++++*/

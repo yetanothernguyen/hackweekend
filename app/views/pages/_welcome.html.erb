@@ -1,10 +1,10 @@
-<div id="splash">
-	<h1>Questio</h1>
+<h1 class="splash_logo"><%= image_tag("qwest-logo.png") %></h1>
+<div class="splash_fb">
 	<% if logged_in? %>
 		<%= user_fb_picture(current_user) %>
 		Hi <%= current_user.username %>!
 		<%= link_to 'Logout', signout_path %>
 	<% else %>
-		<%= link_to 'Login with Facebook', '/auth/facebook' %>
+		<%= link_to 'Login with Facebook', '/auth/facebook', :id => "fb-connect" %>
 	<% end %>
 </div>
