@@ -1,17 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Hackweekend</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, 'sencha-touch-debug' %>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+<!-- conditional comment for mobile ie7 -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7" manifest="default.appcache?v=1"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js" manifest="default.appcache?v=1"> <!--<![endif]-->
 
+<head>
+  <meta charset="utf-8">
+
+  <title>Qwest - Hackweekend</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="images/l/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="images/l/apple-touch-icon.png">
+  <meta http-equiv="cleartype" content="on">
+  <%= stylesheet_link_tag :all %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-	
-	<%= yield %>
 
+<body>
+
+  <div id="container">
+    <header>
+      <%= yield :header %>
+    </header>
+    
+    <div id="main">
+		  <%= yield %>
+    </div>
+    
+    <footer>
+      <%= yield :footer %>
+    </footer>
+  </div> <!--! end of #container -->
+  
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.5.0.js"%3E%3C/script%3E'))</script>
+  <%= javascript_include_tag :all %>
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  <noscript>Your browser does not support JavaScript!</noscript>
 </body>
 </html>

@@ -6,6 +6,8 @@ body{
 	background:#66CCFF;
 	font-family:"Helvetica Neue","Helvetica","Lucida Grande";
 }
+html, body { height: 100%; }
+body { text-align: center; background: url('/images/qwest-bg.png') repeat-x; }
 
 
 
@@ -16,29 +18,34 @@ body{
 /* Splash screen
 /*+++++++++++++*/
 
-#splash{
-	background:#5BB8E7;
+h1.splash_logo img {
+	margin: 30px auto;
+	max-width: 420px;
+	width: 80%;
+	display:block;
+	text-indent:-9999px;
+}
+
+.splash_fb {
+	position: fixed;
+	bottom: 40px;
 	width:250px;
-	height:120px;
-	position:relative;
-	left:50%;
-	padding:20px;
-	top:50%;
- 	margin-top:-60px;
-	margin-left:-125px;
+	left: 50%;
+	margin: 0 auto;
+	margin-left: -125px;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 }
-#splash a#fb-connect{
+.splash_fb #fb-connect {
 	background:url('/images/fb-login.png') no-repeat;
 	width:185px;
 	height:40px;
 	display:block;
+	margin: 0 auto;
 	text-indent:-9999px;
 
 }
-
 
 /*++++++++++++++
 /* User map
