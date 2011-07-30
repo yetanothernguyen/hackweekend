@@ -42,12 +42,18 @@
 	font-weight: bold;
 	color: #3FA9F5;
 	display: block;
+	font-size: 17px;
 }
 .quest-list li a span {
-	font-size: 0.9em;
+	font-size: 13px;
 	color: #999;
 	font-weight: normal;
 }
 .quest-list li a strong {
-	
+	font-size: 13px;
+	color: #999;
+	display: block;
+	background: url('/images/time.png') no-repeat left center;
+	padding-left: 18px;
+	margin-top: 4px;
 }
