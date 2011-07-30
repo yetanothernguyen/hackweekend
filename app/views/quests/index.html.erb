@@ -15,7 +15,7 @@
       <% @quests.each do |quest| %>
         <li>
     	  <%= link_to(quest_path(quest)) do %>
-            <%= quest.bounty %>
+            <%= quest.bounty unless quest.bounty == 0 %>
             <%= quest.title %><br />
             <span>At <%= quest.city.name %> by <%= quest.user.username %></span><br />
             <strong><%= distance_of_time_in_words(Time.now, quest.expired_at) %> left</strong>

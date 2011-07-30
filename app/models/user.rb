@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	has_many :quest_entries
 	has_many :positions
 	has_many :votes
+	has_many :achievements
 
 	def self.create_from_omniauth(omniauth)
 		user = User.new
@@ -34,5 +35,10 @@ class User < ActiveRecord::Base
 	end
 
 	def submitted?(quest)
+		!self.quest_entries.find_by_quest_id(quest.id).nil?
+	end
+
+	def award_badge!(badge)
+		self.achievements.find_or_create_by_badge(badge) # TODO: badge that can be rewarded multiple times
 	end
 end

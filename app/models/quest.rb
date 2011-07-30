@@ -13,7 +13,13 @@ class Quest < ActiveRecord::Base
 	has_many :votes
 	has_many :quest_entries
 
+	after_create :reward
+
 	def duration=(value)
 		self.expired_at = value.to_i.days.from_now
+	end
+
+	def reward
+		self.user.award_badge!("FirstQuestBadge")
 	end
 end

@@ -11,7 +11,7 @@
 
 <%= user_fb_picture(@quest.user, 'square', :class=>' avatar fleft') %>
 </p>
-  <p><%= @quest.bounty %></p>
+  <p><%= @quest.bounty unless @quest.bounty == 0 %></p>
   <p class="qtitle"><%= @quest.title %> </p>
   <p>in  <%= @quest.city.name %>  &bull; <%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left &bull; <%= @quest.votes_count %> votes  </p>
 <br />
