@@ -5,14 +5,11 @@
 
 
   <div class="user_pin_info">
-    <%= image_tag "/images/avatar.png", :class=>"avatar fleft" %>
+    <%= user_fb_picture(current_user, 'square', :class=>' avatar fleft') %>
     <p><%= current_user.name %></p>
     <span class="meta-text">Petaling Jaya, Selangor</span>
   </div>
-  <div class="user_pin_action">
-    <%= link_to 'Create a new quest', "#", :class=>"btn orange" %>
-    <%= link_to 'Browse all quests', "#", :class=>"btn orange"  %>
-  </div>
+
 
 
 
@@ -21,6 +18,10 @@
       <span id="status">checking...</span>
 
     </article>
+      <div class="user_pin_action">
+    <%= link_to 'Create a new quest', 'quests/new', :class=>"btn orange" %>
+    <%= link_to 'Browse all quests', "quests", :class=>"btn orange"  %>
+  </div>
 <script>
 function success(position) {
   var s = document.querySelector('#status');
@@ -35,7 +36,7 @@ function success(position) {
 
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcanvas';
-  mapcanvas.style.height = '350px';
+  mapcanvas.style.height = '365px';
   mapcanvas.style.width = '320px';
 
   document.querySelector('article').appendChild(mapcanvas);

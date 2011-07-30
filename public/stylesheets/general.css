@@ -53,6 +53,10 @@ h1.splash_logo img {
 }
 
 #status{display:none;}
+#mapcanvas {
+	width:100% !important;
+
+}
 /*++++++++++++++
 /* User map
 /*+++++++++++++*/
@@ -91,11 +95,12 @@ h1.splash_logo img {
 
   .user_pin_action{
     background: none repeat scroll 0 0 #FFFFFF;
-    margin: 15px 18px 0;
+    margin: 15px auto 0;
     padding: 15px 0 10px;
     width: 280px;
-    position:absolute;
-    z-index:9999;
+     top: -345px;
+     z-index:9999;
+position:relative;
 border-radius: 4px;
 -moz-border-radius: 4px;
 -webkit-border-radius: 4px;
@@ -109,7 +114,7 @@ border-radius: 4px;
 	position:absolute;
 	display: block;
 	bottom:-15px;
-	left:120px;
+	left:124px;
 	width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
 }
 
