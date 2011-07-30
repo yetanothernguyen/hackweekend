@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(:version => 20110730152351) do
     t.datetime "updated_at"
   end
 
-  create_table "contacts", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "positions", :force => true do |t|
     t.decimal  "latitude",   :precision => 10, :scale => 6
     t.decimal  "longitude",  :precision => 10, :scale => 6
