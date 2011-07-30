@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730141920) do
+ActiveRecord::Schema.define(:version => 20110730152351) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20110730141920) do
     t.decimal  "longitude",  :precision => 10, :scale => 6
     t.decimal  "accuracy",   :precision => 10, :scale => 2
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quest_participations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "quest_id"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -20,6 +20,12 @@
   <%= @quest.user.username %>
 </p>
 
+<% if logged_in? && !current_user.participated?(@quest) %>
+  <%= form_for @quest_participation do |f| %>
+    <%= f.hidden_field :quest_id %>
+    <%= f.hidden_field :user_id %>
+  	<%= f.submit 'Participate' %>
+  <% end %>
+<% end %>
 
-<%= link_to 'Edit', edit_quest_path(@quest) %> |
 <%= link_to 'Back', quests_path %>

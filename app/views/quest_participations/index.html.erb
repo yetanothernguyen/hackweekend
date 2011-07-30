@@ -1,0 +1,20 @@
+<div class="topbar">
+<%= link_to 'Back','#', :class=>"topbar-btn topbar-back fleft" %>
+
+<%= link_to 'Back','#', :class=>"topbar-btn topbar-back fright" %>
+<div class="clear"></div>
+</div>
+
+
+<h1>Participating quests</h1>
+
+<table>
+<% @quest_participations.each do |qp| %>
+  <tr>
+    <td><%= link_to qp.quest.title, quest_path(qp.quest) %></td>
+    <td><%= qp.quest.city.name %></td>
+    <td><%= qp.quest.expired_at %></td>
+    <td><%= qp.quest.status %></td>
+  </tr>
+<% end %>
+</table>

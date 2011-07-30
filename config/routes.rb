@@ -1,5 +1,7 @@
 Hackweekend::Application.routes.draw do
 
+  resources :quest_participations
+
   match '/auth/:provider/callback' => 'authentications#create'
   match '/signout' => 'authentications#signout'
   match '/ajax' => 'ajax#new'

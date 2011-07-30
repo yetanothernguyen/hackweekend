@@ -14,6 +14,7 @@ class QuestsController < ApplicationController
   # GET /quests/1.xml
   def show
     @quest = Quest.find(params[:id])
+    @quest_participation = current_user.quest_participations.new(:quest_id => @quest.id) unless current_user.nil?
 
     respond_to do |format|
       format.html # show.html.erb

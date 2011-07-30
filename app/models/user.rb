@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	end
 
 	has_many :quests
+	has_many :quest_participations
 	has_many :positions
 
 	def self.create_from_omniauth(omniauth)
@@ -19,5 +20,9 @@ class User < ActiveRecord::Base
 		user.save
 		
 		return user
+	end
+
+	def participated?(quest)
+		!self.quest_participations.find_by_quest_id(quest.id).nil?
 	end
 end

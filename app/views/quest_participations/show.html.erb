@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @quest_participation.user_id %>
+</p>
+
+<p>
+  <b>Quest:</b>
+  <%= @quest_participation.quest_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @quest_participation.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_quest_participation_path(@quest_participation) %> |
+<%= link_to 'Back', quest_participations_path %>
