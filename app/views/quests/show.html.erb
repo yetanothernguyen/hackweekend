@@ -36,18 +36,10 @@
 </div>
 
 <div class="participate">
-  <% if logged_in? && !current_user.participated?(@quest) %>
-      <%= form_for @quest_participation do |f| %>
-        <%= f.hidden_field :quest_id %>
-        <%= f.hidden_field :user_id %>
-        <%= f.submit 'Participate', :class=>"btn green" %>
-      <% end %>
-  <% else %>
-       <% if !current_user.submitted?(@quest) %>
-        <%= link_to 'Submit entry', new_quest_entry_path(:quest_id => @quest.id), :class=>"btn orange" %>
-      <% end %>
-    <div class="clear"></div>
+  <% if logged_in? %>
+    <%= link_to 'Submit entry', new_quest_entry_path(:quest_id => @quest.id), :class=>"btn orange" %>
   <% end %>
+    <div class="clear"></div>
 </div>
 
 
