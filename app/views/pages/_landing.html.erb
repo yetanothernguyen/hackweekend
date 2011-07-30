@@ -4,7 +4,7 @@
 
 
 
-  <div class="user_pin_info">
+  <div class="user_pin_info topbar">
     <%= user_fb_picture(current_user, 'square', :class=>' avatar fleft') %>
     <p><%= current_user.name %></p>
     <span class="meta-text">Petaling Jaya, Selangor</span>
@@ -19,8 +19,8 @@
 
     </article>
       <div class="user_pin_action">
-    <%= link_to 'Create a new quest', 'quests/new', :class=>"btn orange" %>
-    <%= link_to 'Browse all quests', "quests", :class=>"btn orange"  %>
+    <%= link_to 'Create a new quest', new_quest_path, :class=>"btn orange" %>
+    <%= link_to 'Browse all quests', quests_path , :class=>"btn orange"  %>
   </div>
 <script>
 function success(position) {

@@ -1,5 +1,12 @@
+<div class="topbar">
+<%= link_to 'Back','#', :class=>"topbar-btn topbar-back fleft" %>
+
+<%= link_to 'X','#', :class=>"topbar-btn topbar-back fright" %>
+<div class="clear"></div>
+</div>
+
+<div class="new_quest">
 <h1>New quest</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', quests_path %>
+</div>

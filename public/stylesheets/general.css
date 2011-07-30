@@ -57,6 +57,18 @@ h1.splash_logo img {
 	width:100% !important;
 
 }
+
+.topbar{
+height:46px;
+    background: url("/images/topbarbg.png") repeat-x scroll left top #99A7C0;
+    border-bottom: 1px solid #606775;
+   padding: 7px 7px 4px;
+      	box-shadow:0px 0px 5px #000;
+	-moz-box-shadow:0px 0px 5px #000;
+	-webkit-box-shadow:0px 0px 5px #000;
+	        z-index:9999;
+        position:relative;
+ }
 /*++++++++++++++
 /* User map
 /*+++++++++++++*/
@@ -66,15 +78,11 @@ h1.splash_logo img {
 
 
   .user_pin_info{
-    background: url("/images/topbarbg.png") repeat-x scroll left top #99A7C0;
-    border-bottom: 1px solid #606775;
+
     line-height: 21px;
-        z-index:9999;
-        position:relative;
-    padding: 5px 7px;
-   	box-shadow:0px 0px 5px #000;
-	-moz-box-shadow:0px 0px 5px #000;
-	-webkit-box-shadow:0px 0px 5px #000;
+height:52px;
+
+
  }
   img.avatar{
 	margin:1px 7px 0 0;
