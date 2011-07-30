@@ -15,10 +15,7 @@
   <p class="qtitle"><%= @quest.title %> </p>
   <span>in  <%= @quest.city.name %> </span>
 
-<p>
-  <b>Expired at:</b>
-  <%= @quest.expired_at %>
-</p>
+<p><%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left </p>
 </div>
 
 

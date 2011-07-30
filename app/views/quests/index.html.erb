@@ -17,7 +17,7 @@
     	  <%= link_to(quest_path(quest)) do %>
             <%= quest.title %><br />
             <span>At <%= quest.city.name %> by <%= quest.user.username %></span><br />
-            <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> more</strong>
+            <strong><%= distance_of_time_in_words(Time.now, quest.expired_at) %> left</strong>
     	  <% end %>
         </li>
       <% end %>
@@ -30,7 +30,7 @@
     	  <%= link_to(quest_path(quest)) do %>
             <%= quest.title %><br />
             <span>At <%= quest.city.name %> by <%= quest.user.username %></span><br />
-            <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> more</strong>
+            <strong><%= distance_of_time_in_words(Time.now, quest.expired_at) %> left</strong>
     	  <% end %>
         </li>
       <% end %>
