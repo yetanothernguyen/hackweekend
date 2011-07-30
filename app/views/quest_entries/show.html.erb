@@ -2,12 +2,12 @@
 
 <p>
   <b>User:</b>
-  <%= @quest_entry.user_id %>
+  <%= @quest_entry.user.name %>
 </p>
 
 <p>
-  <b>Quest:</b>
-  <%= @quest_entry.quest_id %>
+  <b>Entry:</b>
+  <%= @quest_entry.data[:submission] %>
 </p>
 
 <p>
@@ -15,11 +15,50 @@
   <%= @quest_entry.votes_count %>
 </p>
 
-<p>
-  <b>Data:</b>
-  <%= @quest_entry.data %>
-</p>
+<% if logged_in? && !current_user.voted?(@quest_entry) %>
+    <p>
+      <%= link_to 'Vote up', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest_entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => 1), :method => :post %>
+      <%= link_to 'Vote down', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest_entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => -1), :method => :post %>
+    </p>
+  <% end %>
 
+<%= link_to 'Back', @quest_entry.path %>
 
-<%= link_to 'Edit', edit_quest_entry_path(@quest_entry) %> |
-<%= link_to 'Back', quest_entries_path %>
+<article>
+  <span id="status">loading...</span>
+</article>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script>
+function drawMap() {
+  var mapcanvas = document.createElement('div');
+  mapcanvas.id = 'mapcanvas';
+  mapcanvas.style.height = '365px';
+  mapcanvas.style.width = '320px';
+
+  document.querySelector('article').appendChild(mapcanvas);
+
+  var latlng = new google.maps.LatLng(<%= @quest_entry.data[:latitude] %>, <%= @quest_entry.data[:longitude] %>);
+  var myOptions = {
+    zoom: 15,
+    center: latlng,
+    mapTypeControl: false,
+    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+
+  var marker = new google.maps.Marker({
+      position: latlng,
+      map: map,
+      title:"<%= @quest_entry.data[:submission] %>"
+  });
+}
+
+$(document).ready(function() {
+	drawMap();
+});
+
+</script>
+

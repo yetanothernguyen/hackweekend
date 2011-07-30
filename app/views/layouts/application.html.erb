@@ -20,6 +20,7 @@
   <link rel="shortcut icon" href="/images/apple-touch-icon.png">
   <meta http-equiv="cleartype" content="on">
   <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
    <%= csrf_meta_tag %>
 </head>
 
@@ -38,11 +39,6 @@
       <%= yield :footer %>
     </footer>
   </div> <!--! end of #container -->
-
-  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/jquery-1.5.0.js"%3E%3C/script%3E'))</script>
-  <%= javascript_include_tag :all %>
 
   <noscript>Your browser does not support JavaScript!</noscript>
 </body>
