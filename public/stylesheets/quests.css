@@ -1,0 +1,47 @@
+/*++++++++++++++
+/* Quests List
+/*+++++++++++++*/
+
+.tab-btn {
+	background: -webkit-gradient(linear, left top, left bottom, from(#8D99AF), to(#646B79));
+	background: -moz-linear-gradient(top,  #8D99AF,  #646B79);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#8D99AF', endColorstr='#646B79');
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 4px 14px 3px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #333333;
+	text-align: center;
+}
+.tab-btn:hover {
+	background: -webkit-gradient(linear, left top, left bottom, from(#646B79), to(#8D99AF));
+	background: -moz-linear-gradient(top,  #646B79,  #8D99AF);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#646B79', endColorstr='#8D99AF');
+}
+
+.quest-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-bottom: 1px solid #eee;
+}
+.quest-list li {
+	padding: 10px 22px 10px 10px;
+	border-top: 1px solid #eee;
+	background: url("/images/chevron.png") right center no-repeat;
+}
+.quest-list li a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #3FA9F5;
+	display: block;
+}
+.quest-list li a span {
+	font-size: 0.9em;
+	color: #999;
+	font-weight: normal;
+}
+.quest-list li a strong {
+	
+}

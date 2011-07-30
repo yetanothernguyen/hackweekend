@@ -1,24 +1,39 @@
-<div class="topbar">
-<%= link_to 'Back','#', :class=>"topbar-btn topbar-back fleft" %>
-<span class="toplogo">Qwest</span>
-
-<%= link_to 'Back','#', :class=>"topbar-btn topbar-back fright" %>
-<div class="clear"></div>
+<div class="topbar clearfix">
+  <%= link_to 'Back','#', :class=>"topbar-btn topbar-back fleft" %>
+  <span class="toplogo">Qwest</span>
+  <%= link_to 'Add', new_quest_path , :class=>"topbar-btn topbar-add fright" %>
 </div>
 
-<h4>Listing quests</h4>
-
-<ul class="edgetoedge">
-  <% @quests.each do |quest| %>
-    <li class="arrow">
-	  <%= link_to(quest_path(quest)) do %>
-        <%= quest.title %>
-        <%= quest.votes_count %>
-        <%= quest.city.name %><br />
-        <%= quest.expired_at %>
-        <%= quest.user.username %>
-	  <% end %>
-    </li>
-  <% end %>
+<ul class="tabs tab-2">
+  <li><a href="#popular" class="tab-btn">Popular</a></li>
+  <li><a href="#latest" class="tab-btn">Latest</a></li>
 </ul>
-<%= link_to 'New Quest', new_quest_path %>
+
+<div class="tab_container">
+  <div class="tab_content" id="popular">
+    <ul class="quest-list">
+      <% @quests.each do |quest| %>
+        <li>
+    	  <%= link_to(quest_path(quest)) do %>
+            <%= quest.title %><br />
+            <span>At <%= quest.city.name %> by <%= quest.user.username %></span><br />
+            <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> more</strong>
+    	  <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="tab_content" id="latest">
+    <ul class="quest-list">
+      <% @quests.each do |quest| %>
+        <li>
+    	  <%= link_to(quest_path(quest)) do %>
+            <%= quest.title %><br />
+            <span>At <%= quest.city.name %> by <%= quest.user.username %></span><br />
+            <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> more</strong>
+    	  <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
