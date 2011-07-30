@@ -8,5 +8,7 @@ class Vote < ActiveRecord::Base
 		self.votable.votes_count += self.vote
 		return if self.votable.votes_count == 0
 		self.votable.save
+
+		User.update_counters(self.votable.user.id, :cp => self.vote) if self.vote > 0
 	end
 end

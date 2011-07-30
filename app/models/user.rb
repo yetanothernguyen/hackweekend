@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
 	has_many :quests
 	has_many :quest_participations
+	has_many :quest_entries
 	has_many :positions
 	has_many :votes
 

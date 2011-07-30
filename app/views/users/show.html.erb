@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<p>
+	<%= user_fb_picture(@user,"small") %>
+</p>
 <p>
   <b>Username:</b>
   <%= @user.username %>
@@ -15,6 +16,43 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <b>CP:</b>
+  <%= @user.cp %>
+</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p>Won quests:</p>
+<ul class="quest-list">
+  <% @user.quest_entries.status_won.each do |qp| %>
+    <li>
+	  <%= link_to(quest_path(qp.quest)) do %>
+        <%= qp.quest.title %><br />
+        <strong>About <%= distance_of_time_in_words(Time.now, qp.quest.expired_at) %> more</strong>
+	  <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<p>Participating quests:</p>
+<ul class="quest-list">
+  <% @user.quest_entries.status_not_won.each do |qp| %>
+    <li>
+	  <%= link_to(quest_path(qp.quest)) do %>
+        <%= qp.quest.title %><br />
+        <strong>About <%= distance_of_time_in_words(Time.now, qp.quest.expired_at) %> more</strong>
+	  <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<p>Created quests:</p>
+<ul class="quest-list">
+  <% @user.quests.each do |quest| %>
+    <li>
+	  <%= link_to(quest_path(quest)) do %>
+        <%= quest.title %><br />
+        <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> more</strong>
+	  <% end %>
+    </li>
+  <% end %>
+</ul>

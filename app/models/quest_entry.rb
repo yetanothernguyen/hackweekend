@@ -1,5 +1,8 @@
 class QuestEntry < ActiveRecord::Base
 
+	has_enum :status, [:submitted, :won, :lost], :scopes => true
+	default_value_for :status, :active
+
 	serialize :data
 	attr_accessor :latitude, :longitude, :submission
 
@@ -9,6 +12,8 @@ class QuestEntry < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :quest
 
+	named_scope :status_not_won, where(:status => ['submitted','lost'])
+
 	before_save :set_data
 	
 	def set_data
@@ -16,7 +21,4 @@ class QuestEntry < ActiveRecord::Base
 		self.data = data_hash
 	end
 
-	def data_hash
-
-	end
 end
