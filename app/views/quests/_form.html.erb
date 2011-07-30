@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title,:class=>"hide" %>
+    <%= f.text_area :title, :placeholder=>"Describe your quest - (e.g : Find the place place to eat nasi lemak) " %>
   </div>
-  <div class="field">
-    <%= f.label :city_id, "Location"  %><br />
+  <div class="field innerpad">
+    <%= f.label :city_id, "Scope of location"  %>
     <%= f.select :city_id, City.all.map { |c| [c.name, c.id]} %>
   </div>
-  <div class="field">
-    <%= f.label :duration %><br />
-    <%= f.select :duration, [3,7,14,30] %> days
+  <div class="field innerpad">
+    <%= f.label :duration, "Duration to complete" %>
+     <%= f.select :duration, [1,7,14,30] %> days
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Initiate this quest!', :class => "btn orange" %>
   </div>
 <% end %>
