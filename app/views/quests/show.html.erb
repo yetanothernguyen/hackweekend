@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @quest.title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @quest.city.name %>
+</p>
+
+<p>
+  <b>Expired at:</b>
+  <%= @quest.expired_at %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @quest.user.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_quest_path(@quest) %> |
+<%= link_to 'Back', quests_path %>

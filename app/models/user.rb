@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	has_many :quests
+
 	def self.create_from_omniauth(omniauth)
 		user = User.new
 		user.email = omniauth["user_info"]["email"] rescue nil

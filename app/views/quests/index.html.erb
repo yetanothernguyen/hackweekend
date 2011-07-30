@@ -1,0 +1,16 @@
+<h1>Listing quests</h1>
+
+<table>
+<% @quests.each do |quest| %>
+  <tr>
+    <td><%= quest.title %></td>
+    <td><%= quest.city.name %></td>
+    <td><%= quest.expired_at %></td>
+    <td><%= quest.user.username %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quest', new_quest_path %>

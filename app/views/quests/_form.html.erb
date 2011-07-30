@@ -1,0 +1,29 @@
+<%= form_for(@quest) do |f| %>
+  <% if @quest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quest.errors.count, "error") %> prohibited this quest from being saved:</h2>
+
+      <ul>
+      <% @quest.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :city_id, "Location"  %><br />
+    <%= f.select :city_id, City.all.map { |c| [c.name, c.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.select :duration, [3,7,14,30] %> days
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

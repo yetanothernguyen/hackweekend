@@ -6,6 +6,8 @@ gem 'jquery-rails'
 gem 'rails3-generators'
 gem 'omniauth', '~> 0.2.6'
 gem 'rails_config'
+gem 'default_value_for', '~> 1.0.1'
+gem 'has_enum'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
