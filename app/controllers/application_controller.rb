@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?, :current_user
 
   def current_user
-  	@current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
   end
 
   def current_user=(value)
@@ -11,11 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-  	!!current_user
+    !!current_user
   end
 
   def sign_in_and_redirect(user)
-  	session[:user_id] = user.id
+    session[:user_id] = user.id
     redirect_to root_path
   end
 
