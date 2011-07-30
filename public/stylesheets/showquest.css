@@ -1,0 +1,43 @@
+body.quests.show{
+	background:#333 url('/images/linen.png') repeat top left;
+
+}
+
+
+#questshow .questcard{
+ 	width:100%;
+	margin: 0px auto  0px;
+	background:#DEE5F2 url('/images/bots.png') repeat-x top center;
+box-shadow:0px 2px 3px #000;
+-moz-box-shadow:0px 2px 3px #000;
+-webkit-box-shadow:0px 2px 3px #000;
+
+}
+#questshow .questcard .innerpad{
+padding:20px 10px 15px 60px;
+}
+#questshow .questcard .avatar{
+margin :4px 12px 0 -47px;
+}
+#questshow .questcard p.qtitle{
+	font-size:17px;
+	margin:0 0 5px;
+	font-weight:bold;
+ }
+
+#questshow .questcard .votequest{
+	background:#fff;
+	padding:5px 10px;
+}
+
+#questshow .participate{
+	color:#fff;
+	padding:15px 20px;
+
+}
+#questshow .participate input#quest_participation_submit{
+	margin:0 auto;
+	width:150px;
+	display:block;
+	-webkit-appearance: none;
+}
