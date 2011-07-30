@@ -167,13 +167,11 @@ font-size:12px;
 /*+++++++++++++*/
 
 ul.tabs {
-	margin: 7px;
+	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	list-style: none;
 	height: 32px;
-	border: 1px solid #606775;
-	-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; 
 }
 ul.tabs li {
 	float: left;
@@ -187,7 +185,7 @@ ul.tabs li {
 ul.tabs li a {
 	text-decoration: none;
 	display: block;
-	padding: 0 20px;
+	padding: 0;
 	outline: none;
 }
 
@@ -199,3 +197,5 @@ ul.tabs li a {
 }
 
 .tab-2 li { width: 50%; }
+
+.tab-3 li { width: 33.3333%; }

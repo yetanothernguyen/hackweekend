@@ -1,58 +1,60 @@
-<p>
-	<%= user_fb_picture(@user,"small") %>
-</p>
-<p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
+<div class="topbar">
+  <%= link_to 'Back','#', :class => "topbar-btn topbar-back fleft" %>
+  <span class="toplogo">Qwest</span>
+  <%= link_to 'Edit', '#' , :class => "topbar-btn topbar-edit fright" %>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+<div class="profile-page">
+  <%= user_fb_picture(@user, "small", :class => 'avatar fleft') %>
+  <div class="profile-info">
+    <p class="username"><%= @user.name %> <span>(<%= @user.username %></span>)</p>
+    <p class="email"><%= @user.email %></p>
+    <p class="location">Petaling Jaya</p>
+  </div>
+  <p class="cp"><%= @user.cp %> points</p>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<p>
-  <b>CP:</b>
-  <%= @user.cp %>
-</p>
-
-<p>Won quests:</p>
-<ul class="quest-list">
-  <% @user.quest_entries.status_won.each do |qp| %>
-    <li>
-	  <%= link_to(quest_path(qp.quest)) do %>
-        <%= qp.quest.title %><br />
-        <strong>About <%= distance_of_time_in_words(Time.now, qp.quest.expired_at) %> more</strong>
-	  <% end %>
-    </li>
-  <% end %>
+<ul class="tabs tab-3">
+  <li><a href="#accomplished" class="tab-btn">Accomplished</a></li>
+  <li><a href="#participating" class="tab-btn">Participating</a></li>
+  <li><a href="#created" class="tab-btn">Created</a></li>
 </ul>
 
-<p>Participating quests:</p>
-<ul class="quest-list">
-  <% @user.quest_entries.status_not_won.each do |qp| %>
-    <li>
-	  <%= link_to(quest_path(qp.quest)) do %>
-        <%= qp.quest.title %><br />
-        <strong>About <%= distance_of_time_in_words(Time.now, qp.quest.expired_at) %> more</strong>
-	  <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<p>Created quests:</p>
-<ul class="quest-list">
-  <% @user.quests.each do |quest| %>
-    <li>
-	  <%= link_to(quest_path(quest)) do %>
-        <%= quest.title %><br />
-        <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> more</strong>
-	  <% end %>
-    </li>
-  <% end %>
-</ul>
+<div class="tab_container">
+  <div id="participating" class="tab_content">
+    <ul class="quest-list">
+      <% @user.quest_entries.status_won.each do |qp| %>
+        <li>
+        <%= link_to(quest_path(qp.quest)) do %>
+            <%= qp.quest.title %><br />
+            <strong>About <%= distance_of_time_in_words(Time.now, qp.quest.expired_at) %> left</strong>
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="accomplished" class="tab_content">
+    <ul class="quest-list">
+      <% @user.quest_entries.status_not_won.each do |qp| %>
+        <li>
+        <%= link_to(quest_path(qp.quest)) do %>
+            <%= qp.quest.title %><br />
+            <strong>About <%= distance_of_time_in_words(Time.now, qp.quest.expired_at) %> left</strong>
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="created" class="tab_content">
+    <ul class="quest-list">
+      <% @user.quests.each do |quest| %>
+        <li>
+        <%= link_to(quest_path(quest)) do %>
+            <%= quest.title %><br />
+            <strong>About <%= distance_of_time_in_words(Time.now, quest.expired_at) %> left</strong>
+        <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

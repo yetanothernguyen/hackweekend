@@ -1,0 +1,32 @@
+/*++++++++++++++
+/* Profile
+/*+++++++++++++*/
+
+.profile-page {
+	padding: 20px 15px 10px 15px;
+	overflow: hidden;
+	background: url("/images/bots.png") repeat-x scroll center top #DEE5F2;
+}
+.profile-info {
+	overflow: hidden;
+	float: left;
+	padding-bottom: 15px;
+}
+.profile-info .username {
+	font-size: 17px;
+	font-weight: bold;
+}
+.profile-info .username span {
+	font-size: 14px;
+}
+.profile-page .cp {
+	clear: both;
+	font-size: 17px;
+	padding: 7px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background-color: #444;
+	text-shadow: 0 1px 2px #000;
+	-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; 
+}

@@ -14,7 +14,7 @@
 	text-shadow: 0 1px 0 #333333;
 	text-align: center;
 }
-.tab-btn:hover {
+.tab-btn:hover, li.active .tab-btn {
 	background: -webkit-gradient(linear, left top, left bottom, from(#646B79), to(#8D99AF));
 	background: -moz-linear-gradient(top,  #646B79,  #8D99AF);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#646B79', endColorstr='#8D99AF');
