@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Hackweekend</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, 'sencha-touch-debug' %>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
 
+<html class="no-js" manifest="default.appcache?v=1">
+
+<head>
+  <meta charset="utf-8">
+  <title>Qwest - Hackweekend</title>
+  <meta name="description" content="Qwest">
+  <meta name="author" content="Qwesteam">
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/images/apple-touch-icon.png">
+  <meta http-equiv="cleartype" content="on">
+  <%= stylesheet_link_tag :all %>
   <%= csrf_meta_tag %>
 </head>
+
 <body>
 
-<%= yield %>
+  <div id="container">
+    
+    <div id="main">
+		  <%= yield %>
+    </div>
 
+  </div> <!--! end of #container -->
+  
 </body>
 </html>
