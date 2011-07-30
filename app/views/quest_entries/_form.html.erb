@@ -23,6 +23,12 @@
     <%= f.label 'Entry: ', :submission %><br />
     <%= text_area_tag 'quest_entry[submission]' %>
   </div>
+
+  <div class="field">
+    <%= f.label 'Venue: ', :venue %><br />
+    <%= text_field_tag 'quest_entry[venue]', '', :readonly => true %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -73,6 +79,19 @@ function success(position) {
       position: latlng,
       map: map,
       title:"You are here!"
+  });
+
+  geocoder = new google.maps.Geocoder();
+
+  geocoder.geocode({'latLng': latlng}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+        var venue_ele = document.querySelector('#quest_entry_venue');
+        venue_ele.value = results[1].formatted_address;
+      }
+    } else {
+      //alert("Geocoder failed due to: " + status);
+    }
   });
 }
 

@@ -42,10 +42,11 @@ class QuestEntriesController < ApplicationController
   # POST /quest_entries.xml
   def create
     @quest_entry = QuestEntry.new(params[:quest_entry])
+    @quest = @quest_entry.quest
 
     respond_to do |format|
       if @quest_entry.save
-        format.html { redirect_to(@quest_entry.quest, :notice => 'Quest entry was successfully created.') }
+        format.html { redirect_to(@quest, :notice => 'Quest entry was successfully created.') }
         format.xml  { render :xml => @quest_entry, :status => :created, :location => @quest_entry }
       else
         format.html { render :action => "new" }

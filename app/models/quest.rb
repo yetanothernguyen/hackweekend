@@ -6,6 +6,8 @@ class Quest < ActiveRecord::Base
 
 	attr_accessor :duration
 
+	validates :title, :presence => true
+
 	belongs_to :user
 	belongs_to :city
 	has_many :votes

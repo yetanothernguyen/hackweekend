@@ -1,7 +1,7 @@
 class QuestEntry < ActiveRecord::Base
 
 	has_enum :status, [:submitted, :won, :lost], :scopes => true
-	default_value_for :status, :active
+	default_value_for :status, :submitted
 
 	serialize :data
 	attr_accessor :latitude, :longitude, :submission
