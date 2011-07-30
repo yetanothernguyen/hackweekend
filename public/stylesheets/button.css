@@ -1,0 +1,167 @@
+.btn {
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: middle;
+	position: relative;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal bold 14px/100% "Helvetica Neue", Arial, "lucida grande", "trebuchet ms", helvetica, sans-serif;
+	padding: 8px 20px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	margin: 0;
+	-webkit-box-shadow:  0 1px 0 rgba(255,255,255,0.3) inset,  1px 0px 0px rgba(255,255,255,0.3) inset,  0 1px 0 rgba(153, 153, 153, 0.3);
+	-moz-box-shadow:  0 1px 0 rgba(255,255,255,0.3) inset,  1px 0px 0px rgba(255,255,255,0.3) inset,  0 1px 0 rgba(153, 153, 153, 0.3);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,  1px 0px 0px rgba(255,255,255,0.3) inset,  0 1px 0 rgba(153, 153, 153, 0.3);
+	color: #fff;
+	border: solid 1px #333;
+	background-color: #888;
+	 border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+a.btn {
+	color: #fff;
+}
+
+.btn-no-shadow {
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3),0 1px 0 rgba(255,255,255,0.25) inset;
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,0.25) inset;
+	box-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.bigrounded {
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+}
+
+.rounded {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.disabled, .disabled:hover, .disabled:active {
+	cursor: default;
+	color: #606060;
+	background: #bbb;
+	border: solid 1px #b7b7b7;
+	text-shadow: 0px 1px 1px #fff;
+}
+
+.btn-small {
+	font-size: 11px;
+	padding: 5px 15px;
+}
+
+.btn:active {
+	position: relative;
+	top:1px;
+	outline: none;
+}
+input.btn{
+	background-image:none;
+}
+/*------------------------------------------------------------------------------*/
+/*	~color
+--------------------------------------------------------------------------------*/
+.green,a.green {
+	background-color: #66CC00;
+	border: 1px solid #0D9705;
+	color:#0B7605;
+	text-shadow: 0 1px 0 rgba(255,255,255,.3);
+}
+
+.green:hover {
+	background-color:#6DD108;
+}
+
+.yellow, a.yellow {
+	background-color: #ffc000;
+	color: #a44f00;
+	border: 1px solid #d59816;
+	text-shadow: 0 1px 0 rgba(255,255,255,.3);
+}
+
+.yellow:hover, a.yellow:hover {
+	background-color: #ffcf0f;
+}
+
+.blue {
+	background-color: #30afea;
+	border: 1px solid #1F81B0;
+}
+
+.blue:hover {
+	background-color: #48b7eb;
+}
+
+.gray,a.gray{
+	background-color:#E6E6E6;
+	border:1px solid #aaa;
+	color:#666;
+	text-shadow: 0 1px 0 rgba(255,255,255,.6);
+	-webkit-box-shadow:  0 1px 0 rgba(255,255,255,0.7) inset,  1px 0px 0px rgba(255,255,255,0.7) inset,  0 1px 0 rgba(153, 153, 153, 0.2);
+	-moz-box-shadow:  0 1px 0 rgba(255,255,255,0.7) inset,  1px 0px 0px rgba(255,255,255,0.7) inset,  0 1px 0 rgba(153, 153, 153, 0.2);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset,  1px 0px 0px rgba(255,255,255,0.7) inset,  0 1px 0 rgba(153, 153, 153, 0.2);
+}
+.gray:hover{
+	background-color:#ECECEC;
+}
+
+.orange {
+	background-color: #f68013;
+	border: 1px solid #ce6708;
+}
+
+.disabled,
+a.disabled,
+a.disabled:hover,
+.disabled:hover,
+a.disabled:active,
+.disabled:active  {
+	cursor: default;
+ 	color: #606060;
+ 	top:0;
+ 	opacity:0.4;
+	border: solid 1px #b7b7b7;
+	text-shadow: 0px 1px 1px #fff;
+}
+
+
+
+/*------------------------------------------------------------------------------*/
+/*	~size calibration targeting Mozilla browsers
+--------------------------------------------------------------------------------*/
+
+@-moz-document url-prefix() {
+ 	input.btn,button.btn { padding: 5px 20px 5px; }
+}
+
+
+/*------------------------------------------------------------------------------*/
+/* ~special buttons
+--------------------------------------------------------------------------------*/
+
+a.addpost,
+input.addpost{
+	background-image: url("/assets/addpost-icon.png");
+	background-position: 9px -10px;
+	background-repeat: no-repeat;
+	padding: 8px 20px 9px 50px;
+}
+.addvideo{
+    background: url("/assets/addvideo.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 25px;
+    padding: 9px 0 3px 39px;
+    width: 86px;
+    color:#fff !important;
+    font-weight:bold;
+    font-size:12px;
+    text-shadow:0 1px 1px #4A6418;
+}

@@ -1,9 +1,17 @@
+*{
+	margin:0;
+	padding:0;
+}
 body{
 	background:#66CCFF;
+	font-family:"Helvetica Neue","Helvetica","Lucida Grande";
 }
 
 
 
+.meta-text{
+	font-size:11px;
+}
 /*++++++++++++++
 /* Splash screen
 /*+++++++++++++*/
@@ -45,25 +53,48 @@ body{
 	position:absolute;
 	top:20px;
 	left:50%;
-	width:280px;
+	width:260px;
 	margin-left:-140px;
 	background:#fff;
-	padding:10px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	box-shadow:0px 1px 3px #000;
-	-moz-box-shadow:0px 1px 3px #000;
-	-webkit-box-shadow:0px 1px 3px #000;
-}
+ 	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow:0px 0px 5px #000;
+	-moz-box-shadow:0px 0px 5px #000;
+	-webkit-box-shadow:0px 0px 5px #000;
+ }
 .user_pin:after{
-content:"";
-position:absolute;
- display: block;
-bottom:-15px;
-left:135px;
-width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
+	content:"";
+	position:absolute;
+	display: block;
+	bottom:-15px;
+	left:110px;
+	width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
 }
 
 
+.user_pin .user_pin_info{
+	background:#99A7C0;
+ 	padding:10px;
+	line-height:21px;
+	border-bottom:1px solid #758093;
+ 	border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+}
+.user_pin .user_pin_info p{
+	font-size:18px;
+	margin:0 0 -4px;
+	font-weight:bold;
 
+}
+
+.user_pin  .user_pin_action{
+	padding:15px 0 10px;
+}
+.user_pin a{
+	float:none;
+	width:220px;
+	display:block;
+	margin:0 auto 10px;
+}
