@@ -122,12 +122,12 @@ height:40px;
   .user_pin_action{
     background: none repeat scroll 0 0 #FFFFFF;
     margin: 15px auto 0;
-    padding: 15px 0 10px;
-    width: 280px;
-     top: -345px;
+    padding: 15px 15px 15px;
+    width: 260px;
+     top: -350px;
      z-index:9999;
 position:relative;
-border-radius: 4px;
+ border-radius: 4px;
 -moz-border-radius: 4px;
 -webkit-border-radius: 4px;
 	-webkit-box-shadow:0 1px 4px #333;
@@ -139,15 +139,26 @@ border-radius: 4px;
 	content:"";
 	position:absolute;
 	display: block;
-	bottom:-15px;
-	left:124px;
-	width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
-}
+	background:url('/images/arrowdown.png') no-repeat top left;
+	bottom:-18px;
+	left:127px;
+	width: 36px;
+	height: 19px;
+ }
 
 .user_pin_action a{
-	float:none;
-	width:200px;
+	float:left;
+	width:80px;
 	color:#fff;
+	font-size:17px;
 	display:block;
-	margin:0 auto 10px;
+
+}
+.user_pin_action a.first{
+margin:0 15px 0 0;
+}
+
+.user_pin_action a span{
+display:block;
+font-size:12px;
 }
