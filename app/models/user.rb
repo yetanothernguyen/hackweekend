@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 	has_many :quests
 	has_many :quest_participations
 	has_many :positions
+	has_many :votes
 
 	def self.create_from_omniauth(omniauth)
 		user = User.new
@@ -24,5 +25,10 @@ class User < ActiveRecord::Base
 
 	def participated?(quest)
 		!self.quest_participations.find_by_quest_id(quest.id).nil?
+	end
+
+	def voted?(votable)
+		!self.votes.where(:votable_type => votable.class.to_s,
+										 :votable_id => votable.id).first.nil?
 	end
 end

@@ -8,6 +8,7 @@ class Quest < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :city
+	has_many :votes
 
 	def duration=(value)
 		self.expired_at = value.to_i.days.from_now

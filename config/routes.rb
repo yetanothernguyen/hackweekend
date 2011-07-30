@@ -1,5 +1,7 @@
 Hackweekend::Application.routes.draw do
 
+  resources :votes
+
   resources :quest_participations
 
   match '/auth/:provider/callback' => 'authentications#create'

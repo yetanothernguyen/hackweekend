@@ -12,6 +12,7 @@
     <li class="arrow">
 	  <%= link_to(quest_path(quest)) do %>
         <%= quest.title %>
+        <%= quest.votes_count %>
         <%= quest.city.name %><br />
         <%= quest.expired_at %>
         <%= quest.user.username %>

@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Votes:</b>
+  <%= @quest.votes_count %>
+</p>
+
+<p>
   <b>Location:</b>
   <%= @quest.city.name %>
 </p>
@@ -19,6 +24,13 @@
   <b>Created by:</b>
   <%= @quest.user.username %>
 </p>
+
+<% if logged_in? && !current_user.voted?(@quest) %>
+<p>
+  <%= link_to 'Vote up', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => 1), :method => :post %>
+  <%= link_to 'Vote down', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => -1), :method => :post %>
+</p>
+<% end %>
 
 <% if logged_in? && !current_user.participated?(@quest) %>
   <%= form_for @quest_participation do |f| %>

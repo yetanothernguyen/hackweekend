@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730152351) do
+ActiveRecord::Schema.define(:version => 20110730174455) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20110730152351) do
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,12 +61,22 @@ ActiveRecord::Schema.define(:version => 20110730152351) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "votes_count", :default => 0
   end
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "vote"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
