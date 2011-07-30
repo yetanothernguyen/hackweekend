@@ -6,6 +6,10 @@ body{
 	background: url('/images/qwest-bg.png') repeat-x #66CCFF;
 }
 
+.fleft{float:left;}
+.fright{float:right;}
+.clear{clear:both;}
+
 .meta-text{
 	font-size:11px;
 }
@@ -43,61 +47,75 @@ h1.splash_logo img {
 
 }
 
+#status{display:none;}
 /*++++++++++++++
 /* User map
 /*+++++++++++++*/
 
 #user_map{
-	position:relative;
-	z-index:99999;
+ 	z-index:99999;
+ 	height:50px;
+ 	position:relative;
 }
 
 .user_pin{
-	position:absolute;
-	top:20px;
-	left:50%;
-	width:260px;
-	margin-left:-140px;
-	background:#fff;
- 	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	box-shadow:0px 0px 5px #000;
+   	width:320px;
+ }
+
+
+.user_pin img.avatar{
+	margin:1px 7px 0 0;
+	width:35px;
+	height:35px;
+	border-radius:3px;
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.3);
+	box-shadow:0 1px 0 rgba(255,255,255,0.3);
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.3);
+}
+.user_pin .user_pin_info{
+    background: url("/images/topbarbg.png") repeat-x scroll left top #99A7C0;
+    border-bottom: 1px solid #606775;
+    line-height: 21px;
+    padding: 5px 7px;
+  	box-shadow:0px 0px 5px #000;
 	-moz-box-shadow:0px 0px 5px #000;
 	-webkit-box-shadow:0px 0px 5px #000;
  }
-.user_pin:after{
-	content:"";
-	position:absolute;
-	display: block;
-	bottom:-15px;
-	left:110px;
-	width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
-}
-
-
-.user_pin .user_pin_info{
-	background:#99A7C0;
- 	padding:10px;
-	line-height:21px;
-	border-bottom:1px solid #758093;
- 	border-radius: 3px 3px 0 0;
-	-moz-border-radius: 3px 3px 0 0;
-	-webkit-border-radius: 3px 3px 0 0;
-}
 .user_pin .user_pin_info p{
-	font-size:18px;
-	margin:0 0 -4px;
-	font-weight:bold;
+	font-size:16px;
+	color:#000;
+	margin:1px 0 -5px;
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.3);
 
 }
 
 .user_pin  .user_pin_action{
-	padding:15px 0 10px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 15px auto 0;
+    padding: 15px 0 10px;
+    width: 280px;
+    position:relative;
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+	-webkit-box-shadow:0 1px 4px #333;
+	box-shadow:0 1px 4px #333;
+	-moz-box-shadow:0 1px 4px #333;
+
 }
+.user_pin_action:after{
+	content:"";
+	position:absolute;
+	display: block;
+	bottom:-15px;
+	left:120px;
+	width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
+}
+
 .user_pin a{
 	float:none;
-	width:220px;
+	width:200px;
+	color:#fff;
 	display:block;
 	margin:0 auto 10px;
 }
