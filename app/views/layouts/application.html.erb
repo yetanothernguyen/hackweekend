@@ -10,8 +10,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<% if logged_in? %>
+		Hi <%= current_user.username %>!
+	<% else %>
+		<%= link_to 'Login with Facebook', '/auth/facebook' %>
+	<% end %>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>

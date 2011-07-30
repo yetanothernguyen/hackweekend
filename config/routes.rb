@@ -1,4 +1,8 @@
 Hackweekend::Application.routes.draw do
+  
+  match '/auth/:provider/callback' => 'authentications#create'
+  resources :users
+
   root :to => "pages#home"
   get "pages/home"
   get "pages/user_map"
