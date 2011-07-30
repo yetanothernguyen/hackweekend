@@ -59,29 +59,26 @@
 <div class="entries">
 <ul>
  <% @quest.quest_entries.each do |entry| %>
- <li>
- <%= user_fb_picture(entry.user, 'square', :class=>' avatar fleft') %>
-<div class="entry_info">
-   <span><%= entry.user.name %></span><br />
-  <p><%= entry.data[:submission] %></p>
-  <%= entry.votes_count %>
-</div>
-  <% if logged_in? && !current_user.voted?(entry) %>
-  <div class="entry_vote">
-  <p>
-    <%= link_to "+", votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => 1), :class=>"voteup", :method => :post %></p>
-    <p><%= link_to "-", votes_path('vote[user_id]' => current_user.id , 'vote[votable_id]' => entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => -1), :class=>"votedown", :method => :post %>
-  </p>
+   <li>
+   <%= user_fb_picture(entry.user, 'square', :class=>' avatar fleft') %>
+  <div class="entry_info">
+     <span><%= entry.user.name %></span><br />
+    <p><%= entry.data[:submission] %></p>
+    <%= entry.votes_count %>
+    <%= link_to "View", entry %>
+  </div>
+    <% if logged_in? && !current_user.voted?(entry) %>
+    <div class="entry_vote">
+    <p>
+      <%= link_to "+", votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => 1), :class=>"voteup", :method => :post %></p>
+      <p><%= link_to "-", votes_path('vote[user_id]' => current_user.id , 'vote[votable_id]' => entry.id, 'vote[votable_type]' => 'QuestEntry', 'vote[vote]' => -1), :class=>"votedown", :method => :post %>
+    </p>
   </div>
 <% end %>
 </li>
-<% end %>
 </ul>
  </div>
-  <%= link_to "View", entry %>
 <% end %>
-
-<%= link_to 'Back', quests_path %>
 
 <article>
   <span id="status">loading...</span>
