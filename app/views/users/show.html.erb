@@ -21,7 +21,7 @@
 </ul>
 
 <div class="tab_container">
-  <div id="participating" class="tab_content">
+  <div id="accomplished" class="tab_content">
     <ul class="quest-list">
       <% @user.quest_entries.status_won.each do |qp| %>
         <li>
@@ -33,7 +33,7 @@
       <% end %>
     </ul>
   </div>
-  <div id="accomplished" class="tab_content">
+  <div id="participating" class="tab_content">
     <ul class="quest-list">
       <% @user.quest_entries.status_not_won.each do |qp| %>
         <li>
