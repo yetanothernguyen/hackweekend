@@ -4,8 +4,8 @@
 
 .profile-page {
 	padding: 20px 15px 10px 15px;
-	overflow: hidden;
 	background: url("/images/bots.png") repeat-x scroll center top #DEE5F2;
+	-moz-box-shadow: 0px 1px 4px #000; -webkit-box-shadow: 0px 1px 4px #000; box-shadow: 0px 1px 4px #000; 
 }
 .profile-info {
 	overflow: hidden;
@@ -19,14 +19,37 @@
 .profile-info .username span {
 	font-size: 14px;
 }
-.profile-page .cp {
-	clear: both;
+.profile-page .stat {
 	font-size: 17px;
-	padding: 7px;
+	padding: 7px 0;
 	color: #fff;
 	text-align: center;
 	font-weight: bold;
 	background-color: #444;
 	text-shadow: 0 1px 2px #000;
-	-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; 
+	width: 48%;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; 
+}
+.badges {
+	background: url("/images/linen.png") repeat scroll left top #333333;
+}
+.badges ul {
+	padding: 20px;
+	overflow: hidden;
+	margin: 0;
+	list-style: none;
+}
+.badges ul li {
+	float: left;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+}
+.badges ul li img {
+	margin: 0 auto 5px;
+	display: block;	
+}
+.badges ul li p {
+	text-align: center;
+	color: #fff;
 }

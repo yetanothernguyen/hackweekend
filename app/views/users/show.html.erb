@@ -11,7 +11,22 @@
     <p class="email"><%= @user.email %></p>
     <p class="location">Petaling Jaya</p>
   </div>
-  <p class="cp"><%= @user.cp %> points</p>
+  <div class="clear"></div>
+  <p class="stat fleft"><%= @user.cp %> points</p>
+  <p class="stat fright" id="badge-stat">5 badges</p>
+  <div class="clear"></div>
+</div>
+<div class="badges">
+  <ul>
+    <li>
+      <%= image_tag("/images/badges/first-quest.png") %>
+      <p><strong>First Quest</strong> awarded on 12 Aug 2011</p>
+    </li>
+    <li>
+      <%= image_tag("/images/badges/first-participate.png") %>
+      <p><strong>First Participation</strong> awarded on 12 Aug 2011</p>
+    </li>
+  </ul>
 </div>
 
 <ul class="tabs tab-3">

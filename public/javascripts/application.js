@@ -16,5 +16,16 @@ $(document).ready(function() {
 		$(activeTab).slideDown(); //Fade in the active ID content
 		return false;
 	});
+	
+	if ($(".badges").length) {
+		$(".badges").hide();
+		$("#badge-stat").click(function(){
+			if ($(".badges:visible").length) {
+				$(".badges").slideUp();
+			} else {
+				$(".badges").slideDown();
+			}
+		});
+	}
 
 });
