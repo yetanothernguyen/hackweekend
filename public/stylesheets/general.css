@@ -66,12 +66,26 @@ h1.splash_logo img {
 height:33px;
     background: url("/images/topbarbg.png") repeat-x scroll left top #99A7C0;
     border-bottom: 1px solid #606775;
-   padding: 7px 7px 4px;
-      	box-shadow:0px 0px 5px #000;
+	padding: 7px 7px 4px;
+	box-shadow:0px 0px 5px #000;
 	-moz-box-shadow:0px 0px 5px #000;
 	-webkit-box-shadow:0px 0px 5px #000;
-	        z-index:9999;
-        position:relative;
+	z-index:9999;
+	position:relative;
+ }
+
+ .toplogo{
+ 	background:url('/images/qwest-head.png') no-repeat top left;
+ 	display:block;
+ 	text-indent:-9999px;
+ 	height:26px;
+ 	margin: 0 auto;
+ 	width:95px;
+ 	position:absolute;
+ 	left:50%;
+ 	margin-left:-47px;
+
+
  }
 /*++++++++++++++
 /* User map
