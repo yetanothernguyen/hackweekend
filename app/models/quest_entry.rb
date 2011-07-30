@@ -12,7 +12,7 @@ class QuestEntry < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :quest
 
-	named_scope :status_not_won, where(:status => ['submitted','lost'])
+	scope :status_not_won, where(:status => ['submitted','lost'])
 
 	before_save :set_data
 	

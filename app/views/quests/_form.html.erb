@@ -23,6 +23,10 @@
     <%= f.label :duration, "Duration to complete the Qwest" %>
      <%= f.select :duration, [['1 day',1],['7 days',7],['14 days',14],['30 days',30]]  %>
   </div>
+  <div class="field innerpad">
+    <%= f.label :bounty, "Bounty reward" %>
+    <%= f.select :bounty, [['No bounty',0],['5 CP',5],['10 CP',10],['50 CP',50]]  %>
+  </div>
   <div class="actions">
     <%= f.submit 'Initiate this quest!', :class => "btn orange" %>
   </div>
