@@ -9,7 +9,7 @@
 <div class="innerpad">
 <p>
 
-<%= user_fb_picture(@quest.user, 'square', :class=>' avatar fleft') %>
+<%= link_to user_fb_picture(@quest.user, 'square', :class=>' avatar fleft'), @quest.user %>
 </p>
   <p><%= @quest.bounty unless @quest.bounty == 0 %></p>
   <p class="qtitle"><%= @quest.title %> </p>
