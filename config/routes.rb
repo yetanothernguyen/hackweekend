@@ -1,7 +1,7 @@
 Hackweekend::Application.routes.draw do
   root :to => "pages#home"
   get "pages/home"
-
+  get "pages/user_map"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
