@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
 	end
 
 	def submitted?(quest)
-		!self.quest_entries.find_by_quest_id(quest.id).nil?
+		false # Allow multiple submission
+		#!self.quest_entries.find_by_quest_id(quest.id).nil?
 	end
 
 	def award_badge!(badge)
