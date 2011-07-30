@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(:version => 20110730141920) do
   end
 
   create_table "positions", :force => true do |t|
-    t.decimal  "latitube",   :precision => 10, :scale => 0
-    t.decimal  "longitude",  :precision => 10, :scale => 0
-    t.decimal  "accuracy",   :precision => 10, :scale => 0
+    t.decimal  "latitude",   :precision => 10, :scale => 6
+    t.decimal  "longitude",  :precision => 10, :scale => 6
+    t.decimal  "accuracy",   :precision => 10, :scale => 2
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

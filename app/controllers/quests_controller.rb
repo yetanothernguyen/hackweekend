@@ -40,7 +40,7 @@ class QuestsController < ApplicationController
   # POST /quests
   # POST /quests.xml
   def create
-    @quest = current_user.quests.new(params[:quest])
+    @quest = current_user.nil? ? Quest.new(params[:quest]) : current_user.quests.new(params[:quest])
 
     respond_to do |format|
       if @quest.save

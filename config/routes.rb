@@ -1,10 +1,11 @@
 Hackweekend::Application.routes.draw do
-  
-  resources :quests
 
   match '/auth/:provider/callback' => 'authentications#create'
   match '/signout' => 'authentications#signout'
-  resources :users
+  match '/ajax' => 'ajax#new'
+  
+  resources :quests
+  resources :users, :only => [:index, :show]
 
   root :to => "pages#home"
   get "pages/home"

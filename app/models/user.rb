@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	end
 
 	has_many :quests
-	has_many :locations
+	has_many :positions
 
 	def self.create_from_omniauth(omniauth)
 		user = User.new
