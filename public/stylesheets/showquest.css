@@ -41,3 +41,60 @@ margin :4px 12px 0 -47px;
 	display:block;
 	-webkit-appearance: none;
 }
+#questshow .entries{
+	width:95%;
+	margin:0 auto 30px;
+	background:#fff;
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+}
+#questshow .entries ul{
+	list-style:none;
+}
+#questshow .entries li{
+	padding:10px 10px;
+	overflow:hidden;
+	border-bottom:1px solid #ddd;
+}
+#questshow .entries li:last-child{
+	border:0;
+}
+#questshow .entries li img.avatar{
+	margin-right:10px;
+
+}
+#questshow .entries li span{
+	font-size:12px;
+	color:#555;
+	font-weight:bold;
+}
+#questshow .entries li p{
+	font-size:15px;
+}
+#questshow .entries li .entry_info{
+	width:73%;
+	float:left;
+}
+#questshow .entries li .entry_vote{
+	float:right;
+	width:25px;
+}
+#questshow .entries li .entry_vote p a{
+	font-size:11px;
+	background:#eee;
+	padding:8px 4px;
+	width:20px;
+ 	display:block;
+	margin-bottom:4px;
+text-align:center;
+font-weight:bold;
+	text-decoration:none;
+
+}
+#questshow .entries li .entry_vote p a.voteup{
+	background:green;
+}
+#questshow .entries li .entry_vote p a.votedown{
+	background:red;
+}
