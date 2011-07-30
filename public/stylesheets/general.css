@@ -52,18 +52,22 @@ h1.splash_logo img {
 /* User map
 /*+++++++++++++*/
 
-#user_map{
- 	z-index:99999;
- 	height:50px;
- 	position:relative;
-}
 
-.user_pin{
-   	width:320px;
+
+
+
+  .user_pin_info{
+    background: url("/images/topbarbg.png") repeat-x scroll left top #99A7C0;
+    border-bottom: 1px solid #606775;
+    line-height: 21px;
+        z-index:9999;
+        position:relative;
+    padding: 5px 7px;
+   	box-shadow:0px 0px 5px #000;
+	-moz-box-shadow:0px 0px 5px #000;
+	-webkit-box-shadow:0px 0px 5px #000;
  }
-
-
-.user_pin img.avatar{
+  img.avatar{
 	margin:1px 7px 0 0;
 	width:35px;
 	height:35px;
@@ -72,29 +76,21 @@ h1.splash_logo img {
 	box-shadow:0 1px 0 rgba(255,255,255,0.3);
 	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.3);
 }
-.user_pin .user_pin_info{
-    background: url("/images/topbarbg.png") repeat-x scroll left top #99A7C0;
-    border-bottom: 1px solid #606775;
-    line-height: 21px;
-    padding: 5px 7px;
-  	box-shadow:0px 0px 5px #000;
-	-moz-box-shadow:0px 0px 5px #000;
-	-webkit-box-shadow:0px 0px 5px #000;
- }
-.user_pin .user_pin_info p{
+ .user_pin_info p{
 	font-size:16px;
 	color:#000;
-	margin:1px 0 -5px;
-	text-shadow: 0 1px 0 rgba(255,255,255, 0.3);
+	margin:0 0 -4px;
+ 	text-shadow: 0 1px 0 rgba(255,255,255, 0.3);
 
 }
 
-.user_pin  .user_pin_action{
+  .user_pin_action{
     background: none repeat scroll 0 0 #FFFFFF;
-    margin: 15px auto 0;
+    margin: 15px 18px 0;
     padding: 15px 0 10px;
     width: 280px;
-    position:relative;
+    position:absolute;
+    z-index:9999;
 border-radius: 4px;
 -moz-border-radius: 4px;
 -webkit-border-radius: 4px;
@@ -112,7 +108,7 @@ border-radius: 4px;
 	width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #fff;
 }
 
-.user_pin a{
+.user_pin_action a{
 	float:none;
 	width:200px;
 	color:#fff;
