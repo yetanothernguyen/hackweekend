@@ -2,8 +2,7 @@ html, body { height: 100%; }
 
 body{
 	font-family:"Helvetica Neue","Helvetica","Lucida Grande";
-	text-align: center;
-	background: url('/images/qwest-bg.png') repeat-x #66CCFF;
+	background: #fff;
 }
 
 .fleft{float:left;}
@@ -17,9 +16,15 @@ body{
 /*++++++++++++++
 /* Splash screen
 /*+++++++++++++*/
+#splashpage{
+		text-align: center;
+overflow:hidden;
+height:400px;
+		background: url('/images/qwest-bg.jpg') repeat-x #66CCFF;
 
+}
 h1.splash_logo img {
-	margin: 30px auto;
+	margin: 60px auto 0;
 	max-width: 420px;
 	width: 80%;
 	display:block;

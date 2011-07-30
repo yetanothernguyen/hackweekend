@@ -1,3 +1,4 @@
+<div id="splashpage">
 <h1 class="splash_logo"><%= image_tag("qwest-logo.png") %></h1>
 <div class="splash_fb">
 	<% if logged_in? %>
@@ -7,4 +8,5 @@
 	<% else %>
 		<%= link_to 'Login with Facebook', '/auth/facebook', :id => "fb-connect" %>
 	<% end %>
+</div>
 </div>
