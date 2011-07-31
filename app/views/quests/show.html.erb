@@ -1,6 +1,6 @@
 <div class="topbar">
   <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
-  <span class="toplogo">Qwest</span>
+  <span class="toplogo"><%= link_to 'Qwest', root_path %></span>
   <%= link_to 'Submit',new_quest_entry_path(:quest_id => @quest.id), :class=>"topbar-btn topbar-back fright" %>
   <div class="clear"></div>
 </div>

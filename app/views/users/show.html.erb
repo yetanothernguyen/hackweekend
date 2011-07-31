@@ -1,8 +1,7 @@
 <div class="topbar">
-  <%= link_to 'Back','#', :class => "topbar-btn topbar-back fleft" %>
-  <span class="toplogo">Qwest</span>
-  <%= link_to 'Edit', '#' , :class => "topbar-btn topbar-edit fright" %>
-</div>
+   <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
+  <span class="toplogo"><%= link_to 'Qwest', root_path %></span>
+ </div>
 
 <div class="profile-page">
   <%= user_fb_picture(@user, "square", :class => 'avatar fleft') %>

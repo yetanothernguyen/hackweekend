@@ -74,7 +74,7 @@ height:33px;
 	position:relative;
  }
 
- .toplogo{
+ .toplogo a{
  	background:url('/images/qwest-head.png') no-repeat top left;
  	display:block;
  	text-indent:-9999px;
