@@ -16,6 +16,12 @@ body{
 	font-size:11px;
 }
 
+.fvote{padding:5px 10px;background:#5C6573;
+	border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+color:#eee;
+}
 
 span.bounty{
 	padding:2px 3px 2px 4px;

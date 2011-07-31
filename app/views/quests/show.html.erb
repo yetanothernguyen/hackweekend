@@ -11,16 +11,19 @@
 <p>
 <%= link_to user_fb_picture(@quest.user, 'square', :class => ' avatar fleft'), @quest.user %>
 </p>
-  <p class="qtitle"><%= @quest.title %> </p>
+  <p class="qtitle">
+  <% if @quest.bounty && @quest.bounty > 0 %>
+            <span class="bounty"> CP <%= @quest.bounty %> </span>
+         <% end %>
+         <%= @quest.title %> </p>
   <p>in <%= @quest.city.name %> &bull; <%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left  </p>
-  <p><%= " #{@quest.bounty} bounty" unless @quest.bounty == 0 %></p>
-<br />
+ <br />
  <p>
 <% if logged_in? && !current_user.voted?(@quest) %>
   <%= link_to '+', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => 1),:class=>"vote voteup", :method => :post %>
   <%= link_to '-', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => -1),:class=>"vote votedown", :method => :post %>
 <% end %>
-<%= @quest.votes_count %> votes
+<span class="fvote"><%= @quest.votes_count %> votes</span>
 </p>
 <div class="clear"></div>
 </div>
