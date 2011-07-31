@@ -16,6 +16,17 @@ body{
 	font-size:11px;
 }
 
+
+span.bounty{
+	padding:2px 3px 2px 4px;
+	background:red;
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+	margin:0 5px 0 0;
+	font-size:11px !important;
+	color:#fff !important;
+}
 /*++++++++++++++
 /* Splash screen
 /*+++++++++++++*/
