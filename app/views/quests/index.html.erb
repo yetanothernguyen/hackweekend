@@ -12,7 +12,7 @@
 <div class="tab_container">
   <div class="tab_content" id="popular">
     <ul class="quest-list">
-      <% @quests.each do |quest| %>
+      <% @popular_quests.each do |quest| %>
         <li>
     	  <%= link_to(quest_path(quest)) do %>
             <%= quest.bounty unless quest.bounty == 0 %>
@@ -26,7 +26,7 @@
   </div>
   <div class="tab_content" id="latest">
     <ul class="quest-list">
-      <% @quests.each do |quest| %>
+      <% @latest_quests.each do |quest| %>
         <li>
     	  <%= link_to(quest_path(quest)) do %>
             <%= quest.title %><br />

@@ -1,29 +1,28 @@
 <div class="topbar">
-   <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
+  <%= link_to 'Back','javascript:history.go(-1)', :class => "topbar-btn topbar-back fleft" %>
   <span class="toplogo"><%= link_to 'Qwest', root_path %></span>
- </div>
+  <%= link_to 'Edit', '#' , :class => "topbar-btn topbar-edit fright" %>
+</div>
 
 <div class="profile-page">
-  <%= user_fb_picture(@user, "square", :class => 'avatar fleft') %>
+  <%= link_to user_fb_picture(@user, 'square', :class => ' avatar fleft'), @user %>
   <div class="profile-info">
     <p class="username"><%= @user.name %> <span>(<%= @user.username %></span>)</p>
      <p class="location">Petaling Jaya, Selangor</p>
   </div>
   <div class="clear"></div>
   <p class="stat fleft"><%= @user.cp %> points</p>
-  <p class="stat fright" id="badge-stat">2 badges</p>
+  <p class="stat fright" id="badge-stat"><%= @user.achievements.count %> badges</p>
   <div class="clear"></div>
 </div>
 <div class="badges">
   <ul>
-    <li>
-      <%= image_tag("/images/badges/first-quest.png") %>
-      <p><strong>First Quest</strong> <br /> <span class="meta-text">awarded on 31 Jul 2011</span></p>
-    </li>
-    <li>
-      <%= image_tag("/images/badges/first-participate.png") %>
-      <p><strong>First Participation</strong> <br /> <span class="meta-text"> awarded on 31 Jul 2011</span></p>
-    </li>
+    <% @user.achievements.each do |achievement| %>
+      <li>
+        <%= image_tag("badges/#{Settings.badges.send(achievement.badge).filename}") %>
+        <p><strong><%= Settings.badges.send(achievement.badge).name %></strong></p>
+      </li>
+    <% end %>
   </ul>
 </div>
 

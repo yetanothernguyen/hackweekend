@@ -2,7 +2,8 @@ class QuestsController < ApplicationController
   # GET /quests
   # GET /quests.xml
   def index
-    @quests = Quest.all
+    @popular_quests = Quest.order('votes_count DESC').all
+    @latest_quests = Quest.order('created_at DESC').all
 
     respond_to do |format|
       format.html # index.html.erb

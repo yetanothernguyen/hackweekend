@@ -2,7 +2,7 @@
 <h1 class="splash_logo"><%= image_tag("qwest-logo.png") %></h1>
 <div class="splash_fb">
 	<% if logged_in? %>
-		<%= user_fb_picture(current_user) %>
+		<%= <%= link_to user_fb_picture(current_user, 'square', :class => 'avatar'), current_user %> %>
 		Hi <%= current_user.username %>!
 		<%= link_to 'Logout', signout_path %>
 	<% else %>
