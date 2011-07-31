@@ -5,26 +5,25 @@
 </div>
 
 <div class="profile-page">
-  <%= user_fb_picture(@user, "small", :class => 'avatar fleft') %>
+  <%= user_fb_picture(@user, "square", :class => 'avatar fleft') %>
   <div class="profile-info">
     <p class="username"><%= @user.name %> <span>(<%= @user.username %></span>)</p>
-    <p class="email"><%= @user.email %></p>
-    <p class="location">Petaling Jaya</p>
+     <p class="location">Petaling Jaya, Selangor</p>
   </div>
   <div class="clear"></div>
   <p class="stat fleft"><%= @user.cp %> points</p>
-  <p class="stat fright" id="badge-stat">5 badges</p>
+  <p class="stat fright" id="badge-stat">2 badges</p>
   <div class="clear"></div>
 </div>
 <div class="badges">
   <ul>
     <li>
       <%= image_tag("/images/badges/first-quest.png") %>
-      <p><strong>First Quest</strong> awarded on 12 Aug 2011</p>
+      <p><strong>First Quest</strong> <br /> <span class="meta-text">awarded on 31 Jul 2011</span></p>
     </li>
     <li>
       <%= image_tag("/images/badges/first-participate.png") %>
-      <p><strong>First Participation</strong> awarded on 12 Aug 2011</p>
+      <p><strong>First Participation</strong> <br /> <span class="meta-text"> awarded on 31 Jul 2011</span></p>
     </li>
   </ul>
 </div>
