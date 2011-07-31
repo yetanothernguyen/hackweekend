@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730225937) do
+ActiveRecord::Schema.define(:version => 20110731005207) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20110730225937) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "uid"
+    t.string   "uid"
     t.string   "provider"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(:version => 20110730225937) do
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
