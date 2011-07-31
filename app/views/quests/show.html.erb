@@ -1,3 +1,4 @@
+
 <div class="topbar">
   <%= link_to_function "Back", "javascript:history.go(-1)", :class=>"topbar-btn topbar-back fleft" %>
   <span class="toplogo"><%= link_to 'Qwest', root_path %></span>
@@ -11,16 +12,15 @@
 <%= link_to user_fb_picture(@quest.user, 'square', :class => ' avatar fleft'), @quest.user %>
 </p>
   <p class="qtitle"><%= @quest.title %> </p>
-  <p>in <%= @quest.city.name %> &bull; <%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left <%= "● #{@quest.bounty} bounty" unless @quest.bounty == 0 %></p>
+  <p>in <%= @quest.city.name %> &bull; <%= distance_of_time_in_words(Time.now, @quest.expired_at) %> left &bull; <%= " #{@quest.bounty} bounty" unless @quest.bounty == 0 %></p>
 <br />
-<% if logged_in? && !current_user.voted?(@quest) %>
-
  <p>
+<% if logged_in? && !current_user.voted?(@quest) %>
   <%= link_to '+', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => 1),:class=>"vote voteup", :method => :post %>
   <%= link_to '-', votes_path('vote[user_id]' => current_user.id, 'vote[votable_id]' => @quest.id, 'vote[votable_type]' => 'Quest', 'vote[vote]' => -1),:class=>"vote votedown", :method => :post %>
-  <%= @quest.votes_count %> votes
-</p>
 <% end %>
+<%= @quest.votes_count %> votes
+</p>
 <div class="clear"></div>
 </div>
 
