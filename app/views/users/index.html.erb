@@ -1,27 +1,17 @@
-<h1>Listing users</h1>
+<div class="topbar clearfix">
+  <%= link_to_function "Back", "history.back()", :class=>"topbar-btn topbar-back fleft" %>
+  <span class="toplogo"><%= link_to 'Qwest', root_path %></span>
+</div>
 
-<table>
-  <tr>
-    <th>Username</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %></td>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<ul class="quest-list">
+  <% @top_users.each do |user| %>
+    <li>
+      <%= link_to user_fb_picture(user, 'square', :class => ' avatar fleft'), user %>
+      <%= user.username %><br/>
+      <%= user.cp %> CPs<br/>
+      <%= user.quests.count %> quests created<br/>
+      <%= user.quest_entries.status_won.count %> quests won<br/>
+      <%= user.quest_entries.status_not_won.count %> quests participated<br/>
+    </li>
+  <% end %>
+</ul>
