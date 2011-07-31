@@ -26,20 +26,7 @@
 
 <body class="<%= controller_name %> <%= action_name %>">
 
-  <div id="container">
-    <header>
-      <%= yield :header %>
-    </header>
+		<%= yield %>
 
-    <div id="main">
-		  <%= yield %>
-    </div>
-
-    <footer>
-      <%= yield :footer %>
-    </footer>
-  </div> <!--! end of #container -->
-
-  <noscript>Your browser does not support JavaScript!</noscript>
 </body>
 </html>

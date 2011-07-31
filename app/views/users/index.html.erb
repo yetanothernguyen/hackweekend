@@ -3,15 +3,16 @@
   <span class="toplogo"><%= link_to 'Qwest', root_path %></span>
 </div>
 
-<ul class="quest-list">
-  <% @top_users.each do |user| %>
+<ul class="quest-list user-list">
+  <% @top_users.each_with_index do |user, i| %>
     <li>
-      <%= link_to user_fb_picture(user, 'square', :class => ' avatar fleft'), user %>
-      <%= user.username %><br/>
-      <%= user.cp %> CPs<br/>
-      <%= user.quests.count %> quests created<br/>
-      <%= user.quest_entries.status_won.count %> quests won<br/>
-      <%= user.quest_entries.status_not_won.count %> quests participated<br/>
+      <%= link_to user do %>
+        <p class="number fleft">#<%= i + 1 %></p>
+        <%= user_fb_picture(user, 'square', :class => ' avatar fleft') %>
+        <p class="fleft username"><%= user.username %></p>
+        <p class="fright cp"><%= user.cp %> CPs</p>
+        <div class="clear"></div>
+      <% end %>
     </li>
   <% end %>
 </ul>

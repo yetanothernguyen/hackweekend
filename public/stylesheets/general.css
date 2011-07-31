@@ -37,11 +37,11 @@ border-radius: 4px;
 /* Splash screen
 /*+++++++++++++*/
 
-#splashpage{
+#splashpage {
 	text-align: center;
 	overflow:hidden;
-	height: 500px;
 	background: url('/images/qwest-bg.jpg') repeat-x #3FA9F5;
+	min-height: 100%;
 }
 h1.splash_logo img {
 	margin: 60px auto 0;
@@ -184,6 +184,34 @@ font-size:13px;
 }
 	margin:0 auto 10px;
 }
+
+
+.users .user-list li {
+	padding-right: 32px;
+}
+
+.user-list .number {
+	font-size: 24px;
+	font-weight: bold;
+	color: #999;
+	margin-right: 10px;
+	line-height: 35px;
+}
+.user-list .username {
+	height: 35px;
+	line-height: 35px;
+	margin-right: 15px;
+}
+.user-list .cp {
+	background-color: #666;
+	padding: 5px 10px;
+	margin-top: 5px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; 
+}
+
 
 /*++++++++++++++
 /* Tabs
