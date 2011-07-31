@@ -3,7 +3,6 @@ html, body { height: 100%; }
 body{
 	font-family:"Helvetica Neue","Helvetica","Lucida Grande";
 	background: #fff;
-
 }
 
 .fleft{float:left;}
@@ -20,12 +19,12 @@ body{
 /*++++++++++++++
 /* Splash screen
 /*+++++++++++++*/
-#splashpage{
-text-align: center;
-overflow:hidden;
-height:400px;
-		background: url('/images/qwest-bg.jpg') repeat-x #66CCFF;
 
+#splashpage{
+	text-align: center;
+	overflow:hidden;
+	height: 500px;
+	background: url('/images/qwest-bg.jpg') repeat-x #3FA9F5;
 }
 h1.splash_logo img {
 	margin: 60px auto 0;
@@ -54,6 +53,13 @@ h1.splash_logo img {
 	margin: 0 auto;
 	text-indent:-9999px;
 
+}
+
+.tagline {
+	color: #fff;
+	font-size: 25px;
+	letter-spacing: -1px;
+	text-shadow: 0 1px 2px #000;
 }
 
 #status{display:none;}
