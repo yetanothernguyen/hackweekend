@@ -3,5 +3,5 @@ badges: {
 					win_quest: { name: "First won quest", filename: "win-quest.png"},
 					first_entry: { name: "First quest entry", filename: "first-participate.png"},
 					ten_entries: { name: "Ten quest entries", filename: "ten-participate.png"},
-					ten_votes: { name: "Ten votes", filename: "ten-votes.png"},
+					ten_votes: { name: "Ten votes", filename: "ten-votes.png"}
         }
